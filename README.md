@@ -12,13 +12,24 @@ docker pull reflectivecode/ut2004
 
 docker run -d \
     --name ut2004 \
+    --entrypoint "/bin/bash"
     -p 80:80 \
     -p 7777:7777/udp \
     -p 7778:7778/udp \
     -e "CONFIG_1=[Engine.AccessControl];AdminPassword=password123;[UWeb.WebServer];bEnabled=True" \
     -e "UT2004_CMD=CTF-FACECLASSIC?game=XGame.xCTFGame" \
     reflectivecode/ut2004
+    
+docker exec -it ut2004 bash
+# apt update
+# apt install nano
+# nano /usr/local/bin/config.sh
+# "Add mkdir"
+# /usr/local/bin/config.sh
+# /usr/local/bin/run-user.sh
 ```
+
+
 
 ## Features
 
