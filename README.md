@@ -12,7 +12,6 @@ docker build -t debian:ut2004
 
 docker run -d \
     --name ut2004 \
-    --entrypoint "/bin/bash"
     -p 80:8080 \
     -p 7777:7777/udp \
     -p 7778:7778/udp \
